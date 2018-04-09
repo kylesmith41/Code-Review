@@ -185,12 +185,7 @@
             return  (aProp.toUpperCase() < bProp.toUpperCase()) ? -1:1;
         }
 
-        const sortObjListByProp = prop => objList => {
-                // Make a copy & don't mutate the passed in list
-                let result = Object.assign([], objList);
-                return result.sort(propSort(prop));
-        }
-
+        const sortObjListByProp = prop => objList => Object.assign([], objList).sort(propSort(prop));
         const sortByFirstName = sortObjListByProp('firstName');
         const sortByLastName = sortObjListByProp('lastName');
 
